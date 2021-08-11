@@ -26,13 +26,14 @@ function Content() {
 					'https://scontent.fhyd13-1.fna.fbcdn.net/v/t1.6435-1/cp0/p60x60/66448304_10156858399889079_2372655773873340416_n.png?_nc_cat=107&ccb=1-4&_nc_sid=1eb0c7&_nc_ohc=DC6hktOz5XkAX8YOSUG&_nc_ht=scontent.fhyd13-1.fna&oh=feb9584cb571a61fb3ae156496ffbdeb&oe=61380E6F',
 			},
 			postedOn: '05-08-2021 03:50 PM',
+			isLiked: false,
 		},
 	]);
 	// HTML
 	return (
 		<div className='col-6 mb-4'>
 			{posts.map((item) => (
-				<Post data={item} />
+				<Post postData={item} />
 			))}
 		</div>
 	);
