@@ -7,6 +7,15 @@ import { useState } from 'react/cjs/react.development';
 function Post({ postData }) {
 	// variables
 	var [data, setData] = useState(postData);
+	var [showComments, setShowComments] = useState(false);
+	var [loggedinUserName, setLoggedInUserName] = useState(localStorage.getItem('userName'));
+	var [loggedinUserPic, setLoggedInUserPic] = useState(localStorage.getItem('userPic'));
+	var [commentText, setCommentText] = useState('');
+	var [comments, setComments] = useState(data.commentsList);
+
+	function updateCommentText(e) {
+		setCommentText(e.target.value);
+	}
 
 	function imgClickhandle() {
 		window.location = data.linkData.url;
@@ -23,6 +32,23 @@ function Post({ postData }) {
 		setData(newData);
 	}
 
+	function toggleComments() {
+		setShowComments(true);
+	}
+
+	function checkForEnter(e) {
+		if (e.key == 'Enter') {
+			var newComment = {
+				name: loggedinUserName,
+				imagePath: loggedinUserPic,
+				comment: commentText,
+			};
+			var newArray = [...comments];
+			newArray.push(newComment);
+			setComments(newArray);
+		}
+	}
+
 	// HTML
 	return (
 		<div className='card fb-post-shadow m-3'>
@@ -36,44 +62,39 @@ function Post({ postData }) {
 						</p>
 					</div>
 				</div>
-				<div className='col-6'>
-					<div class='dropdown me-1'>
+				<div className='col-6 text-end p-2'>
+					<div class='btn-group'>
 						<button
 							type='button'
-							class='btn btn-secondary dropdown-toggle'
-							id='dropdownMenuOffset'
-							data-bs-toggle='dropdown'
-							aria-expanded='false'
-							data-bs-offset='10,20'>
-							Offset
+							class='btn btn-link dropdown-toggle text-white'
+							href='#'
+							id='navbarDropdown'
+							role='button'
+							data-toggle='dropdown'
+							aria-haspopup='true'
+							aria-expanded='false'>
+							<span className='text-secondary'>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									width='16'
+									height='16'
+									fill='currentColor'
+									class='bi bi-three-dots-vertical'
+									viewBox='0 0 16 16'>
+									<path d='M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z' />
+								</svg>
+							</span>
 						</button>
-						<ul class='dropdown-menu' aria-labelledby='dropdownMenuOffset'>
-							<li>
-								<a class='dropdown-item' href='#'>
-									Action
-								</a>
-							</li>
-							<li>
-								<a class='dropdown-item' href='#'>
-									Another action
-								</a>
-							</li>
-							<li>
-								<a class='dropdown-item' href='#'>
-									Something else here
-								</a>
-							</li>
-						</ul>
+
+						<div class='dropdown-menu shadow border-0' aria-labelledby='navbarDropdown'>
+							<a class='dropdown-item' href='#'>
+								Share
+							</a>
+							<a class='dropdown-item' href='#'>
+								Save
+							</a>
+						</div>
 					</div>
-					{/* <svg
-						xmlns='http://www.w3.org/2000/svg'
-						width='16'
-						height='16'
-						fill='currentColor'
-						class='bi bi-three-dots-vertical'
-						viewBox='0 0 16 16'>
-						<path d='M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z' />
-					</svg> */}
 				</div>
 			</div>
 
@@ -114,7 +135,7 @@ function Post({ postData }) {
 						</button>
 					</div>
 					<div className='col-4 text-center'>
-						<button className='btn btn-light'>
+						<button className='btn btn-light' onClick={(e) => toggleComments()}>
 							<FontAwesomeIcon icon={faCommentAlt} />
 							&nbsp;&nbsp; Comment
 						</button>
@@ -127,6 +148,32 @@ function Post({ postData }) {
 					</div>
 				</div>
 			</div>
+
+			{showComments == true && (
+				<div className='card-body'>
+					<div className='flex'>
+						<img src={loggedinUserPic} className='rounded-circle img-28' />
+						<input
+							type='text'
+							className='form-control ms-2  fb-comment-textbox-radius'
+							onKeyDown={(e) => checkForEnter(e)}
+							placeholder='Comment'
+							onChange={(e) => updateCommentText(e)}
+						/>
+					</div>
+					{comments.map((item) => (
+						<div className='flex pt-3'>
+							<img className='rounded-circle img-28' src={item.imagePath} />
+							<div className='fb-bg-comment ms-2 p-2 fb-comment-radius'>
+								<div>
+									<small className='font-weight-700'>{item.name}</small>
+								</div>
+								<small>{item.comment}</small>
+							</div>
+						</div>
+					))}
+				</div>
+			)}
 		</div>
 	);
 }

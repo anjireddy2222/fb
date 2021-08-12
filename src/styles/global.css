@@ -64,3 +64,22 @@ body{
 .font-12{
     font-size: 12px;
 }
+.btn:focus, a:focus, .form-control:focus
+{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.navbar-toggler:focus
+{
+    outline: none !important;
+    box-shadow: none;
+}
+.fb-comment-radius{
+    border-radius: 15px !important;
+}
+.fb-bg-comment{
+    background-color: #f0f2f5;
+}
+.fb-comment-textbox-radius{
+    border-radius: 30px !important;
+}

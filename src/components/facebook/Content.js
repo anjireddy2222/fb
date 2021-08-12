@@ -2,6 +2,13 @@ import { useState } from 'react/cjs/react.development';
 import Post from './Post';
 
 function Content() {
+
+	localStorage.setItem('userName', 'Anji Reddy');
+	localStorage.setItem(
+		'userPic',
+		'https://scontent.fhyd13-1.fna.fbcdn.net/v/t1.6435-1/cp0/c10.0.60.60a/p60x60/48384456_2537519412984825_3925785028360929280_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_ohc=CQLoF8-k2SgAX-7y1A8&_nc_ht=scontent.fhyd13-1.fna&oh=0df332505ef1c35c094655cfb3896da8&oe=611F1BA6'
+	);
+
 	// varibales
 	var [posts, setPosts] = useState([
 		{
@@ -27,6 +34,7 @@ function Content() {
 			},
 			postedOn: '05-08-2021 03:50 PM',
 			isLiked: false,
+			commentsList: [],
 		},
 	]);
 	// HTML
