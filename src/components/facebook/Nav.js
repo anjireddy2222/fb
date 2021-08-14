@@ -3,7 +3,7 @@ import { faFlag, faHome, faSearch, faVideo } from '@fortawesome/free-solid-svg-i
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
-function Nav() {
+function Nav({ noOfProducts }) {
 	// variables
 	var [activeLinkDivStyles, setActiveLinkDivStyles] = useState('pt-3 border-bottom border-primary width-100 text-center border-3 pointer');
 	var [activeH2Styles, setActiveH2Styles] = useState('font-weight-700 text-primary');
@@ -16,6 +16,8 @@ function Nav() {
 		isPagesLinkActive: false,
 		isVideoLinkActive: false,
 	});
+
+	
 
 	function handleClassUpdate(linkName) {
 		if (linkName == 'pages') {
@@ -58,7 +60,7 @@ function Nav() {
 					className={activeLinks.isHomeLinkActive == true ? activeLinkDivStyles : inActiveLinkDivStyles}
 					onClick={(e) => handleClassUpdate('home')}>
 					<h2 className={activeLinks.isHomeLinkActive == true ? activeH2Styles : inActiveH2Styles}>
-						<FontAwesomeIcon icon={faHome} />
+						<FontAwesomeIcon icon={faHome} /> {noOfProducts}
 					</h2>
 				</div>
 				<div
@@ -76,9 +78,7 @@ function Nav() {
 					</h2>
 				</div>
 			</div>
-			<div className='col-3'>
-				
-			</div>
+			<div className='col-3'></div>
 		</div>
 	);
 }

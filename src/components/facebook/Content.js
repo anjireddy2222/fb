@@ -1,8 +1,7 @@
 import { useState } from 'react/cjs/react.development';
 import Post from './Post';
 
-function Content() {
-
+function Content({ increment }) {
 	localStorage.setItem('userName', 'Anji Reddy');
 	localStorage.setItem(
 		'userPic',
@@ -37,9 +36,22 @@ function Content() {
 			commentsList: [],
 		},
 	]);
+
+	const handleIncrement = () => {
+		increment();
+	};
+
 	// HTML
 	return (
 		<div className='col-6 mb-4'>
+			<div className='card m-3'>
+				<div className='card-body'>
+					<button className='btn btn-primary' onClick={(e) => handleIncrement()}>
+						Increase the count
+					</button>
+				</div>
+			</div>
+
 			{posts.map((item) => (
 				<Post postData={item} />
 			))}
