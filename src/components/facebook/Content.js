@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { useState } from 'react/cjs/react.development';
 import Post from './Post';
 
@@ -37,8 +38,16 @@ function Content({ increment }) {
 		},
 	]);
 
+	var dispatch = useDispatch();
+
 	const handleIncrement = () => {
-		increment();
+		var action = { type: 'increment_no_of_products', value: 1 };
+		dispatch(action);
+	};
+
+	const handleDecrement = () => {
+		var action = { type: 'decrement_no_of_products', value: 1 };
+		dispatch(action);
 	};
 
 	// HTML
@@ -46,8 +55,11 @@ function Content({ increment }) {
 		<div className='col-6 mb-4'>
 			<div className='card m-3'>
 				<div className='card-body'>
+					<button className='btn btn-danger' onClick={(e) => handleDecrement()}>
+						-
+					</button>
 					<button className='btn btn-primary' onClick={(e) => handleIncrement()}>
-						Increase the count
+						+
 					</button>
 				</div>
 			</div>

@@ -13,12 +13,10 @@ function Home() {
 		setNoOfProducts(newValue);
 	};
 
-	
-
 	//HTML
 	return (
 		<div className='container-fluid'>
-			<Nav noOfProducts={noOfProducts} />
+			<Nav />
 			<div className='row'>
 				<Left />
 				<Content increment={increment} />

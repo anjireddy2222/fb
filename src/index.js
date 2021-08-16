@@ -8,17 +8,21 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './styles/global.css';
 import Shop from './components/Shop';
 import Home from './components/facebook/Home';
+import { Provider } from 'react-redux';
+import dataStorage from './store/store';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<Switch>
-				<Route exact path='/' component={App} />
-				<Route exact path='/shop' component={Shop} />
-				<Route exact path='/facebook' component={Home} />
-			</Switch>
-		</BrowserRouter>
-	</React.StrictMode>,
+	<Provider store={dataStorage}>
+		<React.StrictMode>
+			<BrowserRouter>
+				<Switch>
+					<Route exact path='/' component={App} />
+					<Route exact path='/shop' component={Shop} />
+					<Route exact path='/facebook' component={Home} />
+				</Switch>
+			</BrowserRouter>
+		</React.StrictMode>
+	</Provider>,
 	document.getElementById('root')
 );
 

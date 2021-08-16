@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function Right() {
 	// variables
 	var route = useHistory();
+
+	var noOfProducts = useSelector((appData) => appData.noOfProducts);
 
 	useEffect(() => {
 		function getLeftLinks() {
@@ -40,7 +43,7 @@ function Right() {
 	//HTML
 	return (
 		<div className='col-3 p-2'>
-			<h6 className='font-weight-700 text-secondary'>Your Pages</h6>
+			<h6 className='font-weight-700 text-secondary'>Your Pages - {noOfProducts}</h6>
 			{leftLinks.map((item) => (
 				<div className='ps-3 pt-1 pb-1 flex left-links rounded pointer' onClick={(e) => hanldeLinkClick(item.linkURL)}>
 					<img className='rounded-circle img-28' src={item.imagePath} />

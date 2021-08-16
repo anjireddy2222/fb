@@ -2,8 +2,9 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faFlag, faHome, faSearch, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-function Nav({ noOfProducts }) {
+function Nav() {
 	// variables
 	var [activeLinkDivStyles, setActiveLinkDivStyles] = useState('pt-3 border-bottom border-primary width-100 text-center border-3 pointer');
 	var [activeH2Styles, setActiveH2Styles] = useState('font-weight-700 text-primary');
@@ -17,7 +18,7 @@ function Nav({ noOfProducts }) {
 		isVideoLinkActive: false,
 	});
 
-	
+	var noOfProducts = useSelector((appData) => appData.noOfProducts);
 
 	function handleClassUpdate(linkName) {
 		if (linkName == 'pages') {
