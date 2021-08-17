@@ -9,7 +9,8 @@ function Nav() {
 			<div className='col-12 flex'>
 				<Link to='/'>Home</Link> &nbsp; &nbsp;
 				<Link to='/shop'>Shop</Link> &nbsp; &nbsp;
-				<Link to='/facebook'>Facebook</Link>
+				<Link to='/facebook'>Facebook</Link>&nbsp; &nbsp;
+				<Link to='/swiggy'>Swiggy</Link> &nbsp; &nbsp;
 			</div>
 		</div>
 	);

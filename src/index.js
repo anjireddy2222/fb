@@ -10,6 +10,7 @@ import Shop from './components/Shop';
 import Home from './components/facebook/Home';
 import { Provider } from 'react-redux';
 import dataStorage from './store/store';
+import SwiggyHome from './components/swiggy/Home';
 
 ReactDOM.render(
 	<Provider store={dataStorage}>
@@ -19,6 +20,7 @@ ReactDOM.render(
 					<Route exact path='/' component={App} />
 					<Route exact path='/shop' component={Shop} />
 					<Route exact path='/facebook' component={Home} />
+					<Route exact path='/swiggy' component={SwiggyHome} />
 				</Switch>
 			</BrowserRouter>
 		</React.StrictMode>
