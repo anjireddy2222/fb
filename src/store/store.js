@@ -66,6 +66,7 @@ function updateAppData(data = appData, action) {
 		}
 		// remove if count is zero
 		if (cartCount <= 0) {
+			console.log("anji's comment");
 			var tempData = [];
 			var tempCartData = [...data.cartItems];
 			tempCartData.map((item) => {
