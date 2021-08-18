@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-
+// test comment
 var appData =
 	localStorage.getItem('appData') == null
 		? {
