@@ -6,11 +6,13 @@ const Products = () => {
 	var products = useSelector((appData) => appData.swiggyProducts);
 
 	const handleIncrement = (id) => {
+		console.log('increment');
 		var action1 = { type: 'increase_main_prouct_count', data: { productid: id, value: 1 } };
 		dispatch(action1);
 	};
 
 	const handleDecrement = (id) => {
+		console.log('decrement');
 		var action1 = { type: 'decrement_main_product_count', data: { productid: id, value: 1 } };
 		dispatch(action1);
 	};

@@ -23,11 +23,12 @@ function updateAppData(data = appData, action) {
 	if (action.type == 'decrement_main_product_count') {
 		var newData = [...data.swiggyProducts];
 		var newCartItem = {};
+		var cartCount = 0;
 		newData.map((item) => {
 			if (item.id == action.data.productid) {
-				var count = item.selectedCount - action.data.value;
+				var count = item.selectedCount - 1;
+				cartCount = count;
 				if (count < 0) {
-					count = 0;
 				}
 				item.selectedCount = count;
 				newCartItem = item;
@@ -49,9 +50,10 @@ function updateAppData(data = appData, action) {
 			data.cartItems = [...newcartItems];
 		} else {
 			var newcartItems = [...data.cartItems];
+			console.log(1, [...data.cartItems]);
 			newcartItems.map((item) => {
 				if (item.id == action.data.productid) {
-					var count = item.selectedCount - action.data.value;
+					var count = item.selectedCount - 1;
 					if (count < 0) {
 						count = 0;
 					}
@@ -59,7 +61,19 @@ function updateAppData(data = appData, action) {
 				}
 				return item;
 			});
+			console.log(2, newcartItems);
 			data.cartItems = [...newcartItems];
+		}
+		// remove if count is zero
+		if (cartCount <= 0) {
+			var tempData = [];
+			var tempCartData = [...data.cartItems];
+			tempCartData.map((item) => {
+				if (item.id != action.data.productid) {
+					tempData.push(item);
+				}
+			});
+			data.cartItems = [...tempData];
 		}
 	}
 

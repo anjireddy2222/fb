@@ -22,7 +22,7 @@ const Cart = () => {
 			<br />
 			{cartItems.map((item) => (
 				<div className='mb-2 border-bottom pb-2'>
-					<h3>{item.title}</h3>
+					<h5>{item.title}</h5>
 					<p>Rs. {item.price}</p>
 					<button className='btn btn-light' onClick={(e) => handleDecrement(item.id)}>
 						&nbsp;-&nbsp;
