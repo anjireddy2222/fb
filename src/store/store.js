@@ -4,8 +4,7 @@ var appData =
 	localStorage.getItem('appData') == null
 		? {
 				noOfProducts: 0,
-				wishList: [],
-				cartItems: [],
+				wishList: [],				cartItems: [],
 				userName: 'Anji Reddy',
 				userPic: 'https://fasfasfagag.com/sfasfaf.jpg',
 				userId: 4545455,
@@ -64,8 +63,9 @@ function updateAppData(data = appData, action) {
 			console.log(2, newcartItems);
 			data.cartItems = [...newcartItems];
 		}
-		// remove if count is zero
+		// remove if coun
 		if (cartCount <= 0) {
+			console.log("pragan's comment")
 			var tempData = [];
 			var tempCartData = [...data.cartItems];
 			tempCartData.map((item) => {
