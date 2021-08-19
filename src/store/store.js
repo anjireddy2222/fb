@@ -17,8 +17,15 @@ var appData =
 				],
 		  }
 		: JSON.parse(localStorage.getItem('appData'));
-
+  
 function updateAppData(data = appData, action) {
+
+	if( action.type == "add_to_wishlist") {
+		var newData = [...data.wishList];
+		newData.push(action.data)
+		data.wishList = [...newData]
+	}
+
 	if (action.type == 'decrement_main_product_count') {
 		var newData = [...data.swiggyProducts];
 		var newCartItem = {};
