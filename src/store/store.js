@@ -65,7 +65,6 @@ function updateAppData(data = appData, action) {
 		}
 		// remove if coun
 		if (cartCount <= 0) {
-			console.log("pragan's comment")
 			console.log("anji's comment");
 			var tempData = [];
 			var tempCartData = [...data.cartItems];
