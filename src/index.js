@@ -11,6 +11,8 @@ import Home from './components/facebook/Home';
 import { Provider } from 'react-redux';
 import dataStorage from './store/store';
 import SwiggyHome from './components/swiggy/Home';
+import Wishlist from './components/Wishlist';
+import Login from './components/Login';
 
 ReactDOM.render(
 	<Provider store={dataStorage}>
@@ -21,6 +23,8 @@ ReactDOM.render(
 					<Route exact path='/shop' component={Shop} />
 					<Route exact path='/facebook' component={Home} />
 					<Route exact path='/swiggy' component={SwiggyHome} />
+					<Route exact path="/wishlist" component={Wishlist} />
+					<Route exact path="/login" component={Login} />
 				</Switch>
 			</BrowserRouter>
 		</React.StrictMode>
