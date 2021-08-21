@@ -15,11 +15,33 @@ var appData =
 					{ id: 4, title: 'Chicken biryani 4', desc: 'Hyderabadi biryani', price: 350, selectedCount: 0 },
 					{ id: 5, title: 'Chicken biryani 5', desc: 'Hyderabadi biryani', price: 400, selectedCount: 0 },
 				],
+				Products3: [
+					{ id: 1, name:'Women Printed Rayon Straight Kurta  (Red)',
+					sellingPrice:432,
+					originalPrice:388},
+					{id:2, name: 'Printed Kanjivaram Cotton Silk Saree  (Brown, Mustard)',
+					sellingPrice:369,
+					originalPrice:275},
+					{id:3, name:'Floral Print, Printed Kanjivaram Cotton Silk Saree  (Dark Blue, Green)',
+					sellingPrice:499,
+					originalPrice:275},
+					{id:4,  name:'Floral Print, Printed Kanjivaram Cotton Silk Saree  (Dark Blue, Green)',
+					sellingPrice:499,
+					originalPrice:275},
+					{ id: 5, productName:'Brocade Woven Kurta & Churidar Material',
+					sellingPrice:699,
+					originalPrice:664},
+					]
 		  }
 		: JSON.parse(localStorage.getItem('appData'));
   
 function updateAppData(data = appData, action) {
 
+	if( action.type == "add_to_wishlist") {
+		var newData = [...data.wishList];
+		newData.push(action.data)
+		data.wishList = [...newData]
+	}
 	if( action.type == "add_to_wishlist") {
 		var newData = [...data.wishList];
 		newData.push(action.data)
