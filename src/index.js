@@ -13,6 +13,7 @@ import dataStorage from './store/store';
 import SwiggyHome from './components/swiggy/Home';
 import Wishlist from './components/Wishlist';
 import Login from './components/Login';
+import Location from './components/Location'
 
 ReactDOM.render(
 	<Provider store={dataStorage}>
@@ -25,6 +26,7 @@ ReactDOM.render(
 					<Route exact path='/swiggy' component={SwiggyHome} />
 					<Route exact path="/wishlist" component={Wishlist} />
 					<Route exact path="/login" component={Login} />
+					<Route exact path="/location" component={Location} />
 				</Switch>
 			</BrowserRouter>
 		</React.StrictMode>

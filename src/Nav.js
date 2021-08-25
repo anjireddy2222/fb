@@ -29,6 +29,7 @@ function Nav() {
 				<Link to='/shop'>Shop</Link> &nbsp; &nbsp;
 				<Link to='/facebook'>Facebook</Link>&nbsp; &nbsp;
 				<Link to='/swiggy'>Swiggy</Link> &nbsp; &nbsp;
+				<Link to='/location'>Location</Link> &nbsp; &nbsp;
 				<Link to="/wishlist">
 					
 					<span className="text-danger"><FontAwesomeIcon icon={faHeart} /> </span>
