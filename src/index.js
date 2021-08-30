@@ -14,13 +14,16 @@ import SwiggyHome from './components/swiggy/Home';
 import Wishlist from './components/Wishlist';
 import Login from './components/Login';
 import Location from './components/Location'
+import ClassComp from './ClassComp';
+import List from './components/classComponents/List';
+
 
 ReactDOM.render(
 	<Provider store={dataStorage}>
 		<React.StrictMode>
 			<BrowserRouter>
 				<Switch>
-					<Route exact path='/' component={App} />
+					<Route exact path='/' component={List} />
 					<Route exact path='/shop' component={Shop} />
 					<Route exact path='/facebook' component={Home} />
 					<Route exact path='/swiggy' component={SwiggyHome} />

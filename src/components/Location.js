@@ -1,19 +1,26 @@
 import { useState } from 'react'
 import Nav from '../Nav'
 import axios from  'axios'
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
-function Location(){
+
+function Location({google}){
 
     // variables
-    var [latitude, setLatitude] = useState('')
-    var [longitude, setLongitude] = useState('')
+    var [latitude, setLatitude] = useState(0)
+    var [longitude, setLongitude] = useState(0)
 
     const handleLocation = () =>{
 
-        if(navigator.geolocation){
+        if(navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(processCoordinates)
         }
 
+    }
+
+    var style = {
+        width: '500px',
+        height: '500px'
     }
 
     const processCoordinates = (coords) =>{
@@ -66,10 +73,25 @@ function Location(){
                     <div>
                         <a href={ "https://maps.google.com?q=" + latitude + "," + longitude }>Navigate</a>
                     </div>
+                    <div className="mt-3 max-wh500">
+                        <Map 
+                            google={google}
+                            style={style}
+                            zoom={10}
+                            center={{lat:latitude, lng: longitude}}
+                        >
+                            <Marker position={ {lat:latitude, lng: longitude}  } />
+                        </Map>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Location;
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyDQ-0yDs9LF6PLjsg6o_-BPy8INN6YCUks'
+})(Location);
+  
+
+

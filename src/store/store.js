@@ -4,7 +4,8 @@ var appData =
 	localStorage.getItem('appData') == null
 		? {
 				noOfProducts: 0,
-				wishList: [],				cartItems: [],
+				wishList: [],				
+				cartItems: [],
 				userName: 'Anji Reddy',
 				userPic: 'https://fasfasfagag.com/sfasfaf.jpg',
 				userId: 4545455,

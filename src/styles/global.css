@@ -83,3 +83,7 @@ body{
 .fb-comment-textbox-radius{
     border-radius: 30px !important;
 }
+.max-wh500{
+    width: 500px;
+    height:500px
+}

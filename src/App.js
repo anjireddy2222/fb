@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import Nav from './Nav';
 
 function App() {
+
+	
+
 	// varibales
 	var [errorMsg, setErrorMsg] = useState('');
 	var [convos, setConvos] = useState([]);
@@ -33,6 +36,7 @@ function App() {
 		}
 
 		getConvos();
+
 	}, []);
 
 	// HTML
