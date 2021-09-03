@@ -9,6 +9,7 @@ function Nav() {
 	//variables
 		var router = useHistory()
 		var wishlist = useSelector(appData => appData.wishList)
+		var favourites = useSelector(appData => appData.favourites)
 		var isUserLoggedIn = false;
 		var loggedinUserid = cookie.load("userid")
 		if( loggedinUserid != null) {
@@ -28,7 +29,7 @@ function Nav() {
 				<Link to='/'>Home</Link> &nbsp; &nbsp;
 				<Link to='/shop'>Shop</Link> &nbsp; &nbsp;
 				<Link to='/facebook'>Facebook</Link>&nbsp; &nbsp;
-				<Link to='/swiggy'>Swiggy</Link> &nbsp; &nbsp;
+	            <Link to='/swiggy'>Swiggy</Link> &nbsp; &nbsp; 
 				<Link to="/wishlist">
 					
 					<span className="text-danger"><FontAwesomeIcon icon={faHeart} /> </span>
@@ -37,6 +38,8 @@ function Nav() {
 					}
 
 				</Link> &nbsp; &nbsp;
+				<Link to="/Product3">Products3</Link>  &nbsp; &nbsp;
+				<Link to="/favourites">favourites</Link> &nbsp; &nbsp;
 				{
 					isUserLoggedIn == false && (
 						<Link to="/login">Login</Link>

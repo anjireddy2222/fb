@@ -4,7 +4,14 @@ var appData =
 	localStorage.getItem('appData') == null
 		? {
 				noOfProducts: 0,
-				wishList: [],				cartItems: [],
+				wishList: [],				cartItems: [],       
+				favourites: [
+					{
+						name:'pragna'
+					},
+					{name:'prasanna'},
+					{name:'pavani'},
+				],
 				userName: 'Anji Reddy',
 				userPic: 'https://fasfasfagag.com/sfasfaf.jpg',
 				userId: 4545455,
@@ -15,6 +22,7 @@ var appData =
 					{ id: 4, title: 'Chicken biryani 4', desc: 'Hyderabadi biryani', price: 350, selectedCount: 0 },
 					{ id: 5, title: 'Chicken biryani 5', desc: 'Hyderabadi biryani', price: 400, selectedCount: 0 },
 				],
+				
 				Products3: [
 					{ id: 1, name:'Women Printed Rayon Straight Kurta  (Red)',
 					sellingPrice:432,
@@ -28,7 +36,7 @@ var appData =
 					{id:4,  name:'Floral Print, Printed Kanjivaram Cotton Silk Saree  (Dark Blue, Green)',
 					sellingPrice:499,
 					originalPrice:275},
-					{ id: 5, productName:'Brocade Woven Kurta & Churidar Material',
+					{ id: 5, name:'Brocade Woven Kurta & Churidar Material',
 					sellingPrice:699,
 					originalPrice:664},
 					]
@@ -42,11 +50,7 @@ function updateAppData(data = appData, action) {
 		newData.push(action.data)
 		data.wishList = [...newData]
 	}
-	if( action.type == "add_to_wishlist") {
-		var newData = [...data.wishList];
-		newData.push(action.data)
-		data.wishList = [...newData]
-	}
+	
 
 	if (action.type == 'decrement_main_product_count') {
 		var newData = [...data.swiggyProducts];
@@ -61,7 +65,8 @@ function updateAppData(data = appData, action) {
 				item.selectedCount = count;
 				newCartItem = item;
 			}
-			return item;
+	
+	
 		});
 		data.swiggyProducts = [...newData];
 
@@ -119,7 +124,7 @@ function updateAppData(data = appData, action) {
 		});
 		data.swiggyProducts = [...newData];
 
-		// add to cart
+		// add to cart                                                                                                                           qqqqqq
 		var isAddedToCart = false;
 		data.cartItems.map((item) => {
 			if (item.id == action.data.productid) {

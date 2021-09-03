@@ -1,7 +1,7 @@
 import Nav from '../Nav';
 import { useDispatch, useSelector } from 'react-redux';
 
-function favourites(){
+function Favourites(){
     // variables
     var favourites = useSelector(appData => appData.favourites)
     // HTML
@@ -22,4 +22,4 @@ function favourites(){
     )
 }
 
-export default favourites;
+export default Favourites;

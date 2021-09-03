@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Wishlist(){
     // variables
-    var wishlist = useSelector(appData => appData.wishList)
+var wishlist = useSelector(appData => appData.wishList)
     // HTML
     return(
         <div className='container'>
