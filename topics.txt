@@ -1,0 +1,98 @@
+html - tags - html, head, body, div, p, h1 to h6, ul and li.
+css - font color, size, width, height, flex, ( block and inline-block ), mdeia query
+
+=================================================================================
+reactjs 
+
+install nodejs
+setup reactjs project
+start & start reactjs application 
+
+what is component
+create, basic syntax of component
+import component to another component
+
+routing   - navigation - browser router and switch
+Link tag and useHistory
+
+install bootstrap
+bootstrap classes - container, row, col, text-primary, bg-primary, button, form-control
+
+forms - login, signup and anyother form - validations, file upload and file upload validations
+
+api class - install axios, what is api, api response, await & async, read api response, 
+assign api response to usestate variable, handle errors.
+call api on page load - useeffect, api call on button click
+api call methods - post, get, put, update, delete
+
+localstorage - save, read from local storage
+cookies - save and read from cookies
+
+redux - what is redux
+store, dispatch, action, 
+set value in storage, read value from storage from another component
+
+class compoents - page life cycle, setstate, state, render
+functional compoents - useState
+
+props - pass data to child components
+
+==============================================================
+
+how to make login, logout
+read loggedin user id from localstorage or cookies
+JWT tokens - read jwt token from header or api response, store jwt token, pass jwt token to all applications
+
+arrays - 
+array declaration
+read array values
+filter array
+sort array
+spread operator
+update particular item in array
+
+
+json object -
+create and read json keywords
+update json keys 
+
+events - button click, form input textbox value change, file upload change
+
+=============================================================
+
+website deployment
+
+- build react application
+- deploying on servers
+- domain and hosting
+- meta tags
+- SEO - search engine optimsation
+
+=============================================================
+
+devide single page into multiple components
+- nav compoents
+- dividing page into blocks
+- creating child pages
+
+
+===================================================
+
+read latitude and longitude form the browser
+- call google locations api and get city, state and address
+- display latitude and longitude on the google map
+
+
+===================================================
+
+
+
+
+
+
+
+
+
+
+
+

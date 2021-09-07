@@ -1,0 +1,66 @@
+HTML basics -
+
+1. tell me some html tags
+2. difference between html tag and element
+3. what is !doctype 
+
+CSS -
+
+1. flex ********
+2. block and inline-block
+3. how to apply new fonts to web page
+4. media queries ********
+
+Javascript - ********
+
+1. declare array ( normal and json array )
+2. declare json array
+3. print 5th element in array
+4. filter 
+5. sort
+6. update
+7. spread operator
+8. sort or filter on click of button events
+
+API calls
+
+9. which library you used for making apis calls - axios
+10. async and wait ********
+11. error handling -  try catch
+12. api methods - post, get, put, update and delete
+13. JWT tokens ********
+
+storage
+
+1. localstorage
+2. cookies
+3. redux - dispatch, action and events ********
+
+1. Webpack and building application ********
+
+
+reactjs
+
+1. what is components
+2. difference between class and functional components
+3. what is state and props
+4. difference between state and props
+5. life cycle methods
+6. how to prevent re-rendering
+7. what is pure component
+8. difference between reactjs and angular
+9. advantages of reactjs
+10. explain virtual dom
+11. reactjs hooks - usestate, useHistory, useeffect
+12. how to pass data to child components
+13. reactjs events - onclick, onchange
+14. controlled components and un-controlled components
+
+
+
+
+
+
+
+
+
