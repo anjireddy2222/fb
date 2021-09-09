@@ -1,3 +1,5 @@
+JSX
+
 HTML basics -
 
 1. tell me some html tags
@@ -42,15 +44,138 @@ storage
 reactjs
 
 1. what is components
+components are the building blocks of reactjs, they represents specific functionality or part of web page or complete web page.
+we can reuse those compoents by importing into another components.
+
 2. difference between class and functional components
+class Components:
+1. statefull components or uncontrolled components - 
+2. has life cycle events - willmount, didmount, didupdate, willunmount and shoudmount
+3. will have render
+4. will maintain state using this.setState
+
+functional components:
+1. stateless components or controlled components - usestate hook will handle the state of the components
+2. no life cycle events - useeffect hook 
+3. no render mothd, will have return method
+4. will maintain state using usestate hook
+
 3. what is state and props
+props - input data to the compoents and we can't modify them inside child component. we can pass data to child compoents using props. 
+if parent component props changes, child component will be updated automatically
+return(
+    <Post data={data} />
+)
+
+state - data of own component, component will manage it's values and updates. in class components, we use setstate to update the data and in functional 
+components, we use usestate hook to manage data. if we update the state, component will be re-renderd or re-displayed 
+
 4. difference between state and props
+same as 3rd answer
+
 5. life cycle methods
+class components:
+1. componentwillmount - this event will be called before displaying the web page in the browser
+2. componentdidmount - this event will be called after dispaying the web page in the browser. used for making api calls on page load.
+3. componentdidupdate - this event will be called after upadting the any varible value.
+4. componentwillunmount - this event will be called before removing the webpage from the browser.
+5. componentshouldmount - will be used to decide the rendering. 
+
+
 6. how to prevent re-rendering
+function Home(){
+
+    var name= "anji";
+    function updateName(){
+        setName("Pragna")
+    }
+
+    render(
+        <Post  />
+    )
+
+}
+when parent component re-renders, child components will be rerenderd automatically. in some cases, re-rendering of child components might not be required.
+but react will do that automatically. to stop that re-rendering, we will use componentshouldmount life cycle event.
+
+class Post extends React.Components{
+    componentshouldmount(){
+        return false;
+    }
+
+    render(){
+        return(
+            <>
+             i am child componet
+            </>
+        )
+    }
+}
+
+componentshouldmount(){
+    return false;
+}
+
+
 7. what is pure component
+
+function Home(){
+
+    render(
+        <Post data={2} />
+    )
+
+}
+
+function Post({data}){
+    return(
+        <>
+            { data }
+        </>
+    )
+}
+
+if component is returning same output for the same input at any point of time, then that component is called pure components.
+reactjs will not re-render the page for the same input again. 
+
+class Post extends React.pureComponet{
+
+}
+
+
 8. difference between reactjs and angular
+1. reactjs is a library, angular is a framework.
+2. hard for freshers to pickup angular. 
+3. performance - angular performance is poor when compred to reactjs
+
 9. advantages of reactjs
+1. easy to learn
+2. reactjs is library so we can use it in a any project( even for 2 to 3 pages of big project)
+3. application performce will be very good.
+
 10. explain virtual dom
+function Home(){
+    var [name, setName] = useState("")
+
+    return(
+        <div>
+            fsgsg
+            agagag
+            agagag
+            <button />
+            <div>
+            <p>
+                anji
+            </p>
+        </div>
+    )
+}
+
+dom - is a javascript object, which holds information about all html elements displayed on a web page. dom will be created on dispaying of any web page.
+even for small text update, dom will be recreated and re-renderd completely. 
+reactjs introuced a virtual dom, they compare newly created virtual dom and old virtual dom and update the changed elements.  
+
+
 11. reactjs hooks - usestate, useHistory, useeffect
 12. how to pass data to child components
 13. reactjs events - onclick, onchange
