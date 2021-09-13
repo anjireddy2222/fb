@@ -12,6 +12,7 @@ function Login(){
     var [msg, setMsg] = useState("")
 
     const updateEmail = (e) =>{
+        console.log(document.getElementById("container"))
         setEmail(e.target.value)
     }
 
@@ -20,6 +21,8 @@ function Login(){
     }
 
     const handleLogin = async () =>{
+
+
         var noOfErrors = 0;
         if( email == ""){
             noOfErrors = noOfErrors + 1;
@@ -55,7 +58,7 @@ function Login(){
 
     // HTML
     return(
-        <div className="container">
+        <div className="container" id="container">
             <Nav />
             <div className="row">
                 <div className="col-12 mb-3 mt-3">
