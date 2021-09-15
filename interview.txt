@@ -1,0 +1,269 @@
+===========================
+JSX
+
+JSX is a javascript XML - html coding folows XML rules like mandatory parent tag and open-close tags.
+
+===========================
+HTML basics -
+
+1. tell me some html tags
+    html, head, meta, body, div, p, heading tags (h1 to h6), table, list tags (ul, ol).
+
+2. difference between html tag and element
+    <div>
+     HI pragna
+    </div>
+    div is an html tag and data inside taga and tag combinely called html element.
+
+3. what is !doctype 
+    !doctype reprensts html version 5 - if we write !doctype in html pgae, browser will understand that it is an html 5 version.
+
+CSS -
+
+1. flex ********
+    div elements occupies full width by default. if you wnat to display div tags side by side, we use css flex. put all div elements inside another div and specify css display as flex.
+
+<div className="flex-div">
+
+            <div>
+                <p>
+                    Hello
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    Hi
+                </p>
+            </div>
+            
+        </div>
+.flex-div{
+    display: flex;
+}
+
+
+
+2. block and inline-block.
+block will occupies full width, div, p, form, heading tags are the example tags.
+inline-block tags will occupies exatc width as data inside them. they won't start from new line.
+.class-name{
+    display: block;
+}
+.class-name2{
+    display: inline-block;
+}
+
+3. how to apply new fonts to web page
+step 1: choose font from google font and copy the font link to head tag in index.html page.
+step 2: specify font-family inside css
+body{
+    font-family: "lato"
+}
+
+4. media queries ********
+we use css media quries to apply styles based on the screen size.
+
+
+Javascript - ********
+
+1. declare array ( normal and json array )
+2. declare json array
+3. print 5th element in array
+4. filter 
+5. sort
+6. update
+7. spread operator
+8. sort or filter on click of button events
+
+API calls
+
+9. which library you used for making apis calls - axios
+10. async and wait ********
+11. error handling -  try catch
+12. api methods - post, get, put, update and delete
+13. JWT tokens ********
+
+storage
+
+1. localstorage
+2. cookies
+3. redux - dispatch, action and events ********
+
+1. Webpack and building application ********
+
+
+reactjs
+
+1. what is components
+components are the building blocks of reactjs, they represents specific functionality or part of web page or complete web page.
+we can reuse those components by importing into another components.
+
+2. difference between class and functional components
+class Components:
+1. statefull components or uncontrolled components - 
+2. has life cycle events - willmount, didmount, didupdate, willunmount and shoudmount
+3. will have render
+4. will maintain state using this.setState
+
+functional components:
+1. stateless components or controlled components - usestate hook will handle the state of the components
+2. no life cycle events - useeffect hook 
+3. no render mothd, will have return method
+4. will maintain state using usestate hook
+
+3. what is state and props
+props - input data to the components and we can't modify them inside child component. we can pass data to child components using props. 
+if parent component props changes, child component will be updated automatically
+return(
+    <Post data={data} />
+)
+
+state - data of own component, component will manage it's values and updates. in class components, we use setstate to update the data and in functional 
+components, we use usestate hook to manage data. if we update the state, component will be re-renderd or re-displayed 
+
+4. difference between state and props
+same as 3rd answer
+
+5. life cycle methods
+class components:
+1. componentwillmount - this event will be called before displaying the web page in the browser
+2. componentdidmount - this event will be called after dispaying the web page in the browser. used for making api calls on page load.
+3. componentdidupdate - this event will be called after upadting the any varible value.
+4. componentwillunmount - this event will be called before removing the webpage from the browser.
+5. componentshouldmount - will be used to decide the rendering. 
+
+
+6. how to prevent re-rendering
+function Home(){
+
+    var name= "anji";
+    function updateName(){
+        setName("Pragna")
+    }
+
+    render(
+        <Post  />
+    )
+
+}
+when parent component re-renders, child components will be rerenderd automatically. in some cases, re-rendering of child components might not be required.
+but react will do that automatically. to stop that re-rendering, we will use componentshouldmount life cycle event.
+
+class Post extends React.Components{
+    componentshouldmount(){
+        return false;
+    }
+
+    render(){
+        return(
+            <>
+             i am child componet
+            </>
+        )
+    }
+}
+
+componentshouldmount(){
+    return false;
+}
+
+
+7. what is pure component
+
+function Home(){
+
+    render(
+        <Post data={2} />
+    )
+
+}
+
+function Post({data}){
+    return(
+        <>
+            { data }
+        </>
+    )
+}
+
+if component is returning same output for the same input at any point of time, then that component is called pure components.
+reactjs will not re-render the page for the same input again. 
+
+class Post extends React.pureComponet{
+
+}
+
+
+8. difference between reactjs and angular
+1. reactjs is a library, angular is a framework.
+2. hard for freshers to pickup angular. 
+3. performance - angular performance is poor when compred to reactjs
+
+9. advantages of reactjs
+1. easy to learn
+2. reactjs is library so we can use it in a any project( even for 2 to 3 pages of big project)
+3. application performce will be very good.
+
+10. explain virtual dom
+function Home(){
+    var [name, setName] = useState("")
+
+    return(
+        <div>
+            fsgsg
+            agagag
+            agagag
+            <button />
+            <div>
+            <p>
+                Pragna
+            </p>
+        </div>
+    )
+}
+
+dom - is a javascript object, which holds information about all html elements displayed on a web page. dom will be created on dispaying of any web page.
+even for small text update, dom will be recreated and re-renderd completely. 
+reactjs introuced a virtual dom, they compare newly created virtual dom and old virtual dom and update the changed elements.  
+
+
+11. reactjs hooks - useState, useHistory, useeffect, useMemo
+
+12. how to pass data to child components
+we use props to pass data from parent component to child component
+function Home(){
+    var [data, setData] = usestate("")
+    return(
+        <Post postdata={data} />
+    )
+}
+
+function Post({postdata}){
+
+    return(
+        {postdata}
+    )
+}
+
+13. reactjs events - onclick, onchange
+events are button click events, textbox text change evenets, file change events, page scroll events.
+
+14. controlled components and un-controlled components
+class components manage their own state by using this.setstate so class components are called uncontrolled components.
+functional components can't manage their win state, they use usestate hook to manage their state so functional components are called controlled components.
+
+15. synthetic events?
+synthetic events works same on any kind of browser. 
+
+
+
+
+======================
+Pending
+
+useMemo
+
+
+
+

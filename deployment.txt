@@ -1,0 +1,40 @@
+edstaack.com  -> domain name
+deploy code in the server or computer - hosting
+connect hosting server and domain name
+
+#generate production build
+run -> "npm run build" command in the terminal
+build folder will be created inside the project
+-- build folder will have only one html file index.html file -> that is why it is called single page applications
+
+###############################################
+
+-- webpack or babbel -> convets reactjs code (compoents, imported libraries) into plain javascript, css and html files
+
+
+-----------------------------------
+
+SEO
+
+1. use proper keywords, title and description
+2. Optimise the webiste for better user expereince
+
+
+####
+1. render blocking in html -> to avaoid, place javascript in the footer, remove it form the head tag
+2. Place CSS at the top
+3. place javascript in the footer
+
+
+
+
+
+
+
+
+
+
+
+
+
+

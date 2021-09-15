@@ -41,23 +41,23 @@ ReactDOM.render( <
     /> <
     Route exact path = "/login"
     component = { Login }
-    /> <<
-    << << < HEAD <
+    /> << <<
+    << < HEAD <
     Route exact path = "/favourites"
     component = { Favourites }
     /> <
     Route exact path = "/Product3"
     component = { Product3 }
-    /> ===
-    === = <
+    /> === ===
+    = <
     Route exact path = "/location"
     component = { Location }
-    /> >>>
-    >>> > 20 dd1abb83d5499439bbbc1c4e646c70f7c5d828 <
-    /Switch> <
-    /BrowserRouter> <
-    /React.StrictMode> <
-    /Provider>,
+    /> >>> >>>
+    > 20 dd1abb83d5499439bbbc1c4e646c70f7c5d828 <
+    /Switch> < /
+    BrowserRouter > <
+    /React.StrictMode> < /
+    Provider > ,
     document.getElementById('root')
 );
 
