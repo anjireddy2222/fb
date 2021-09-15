@@ -61,7 +61,7 @@ body{
     font-family: "lato"
 }
 
-4. media queries ********
+4. media queries ******** (pending)
 we use css media quries to apply styles based on the screen size.
 
 
@@ -71,10 +71,12 @@ Javascript - ********
 2. declare json array
 3. print 5th element in array
 4. filter 
-5. sort
+5. sort (sort json array - string value)
 6. update
 7. spread operator
 8. sort or filter on click of button events
+9. remove duplicates************************
+
 
 API calls
 
@@ -83,6 +85,7 @@ API calls
 11. error handling -  try catch
 12. api methods - post, get, put, update and delete
 13. JWT tokens ********
+
 
 storage
 
