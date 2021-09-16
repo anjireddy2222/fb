@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Nav from './Nav';
+import cookie from 'react-cookies';
 
 function App() {
 
@@ -16,9 +17,9 @@ function App() {
 		async function getConvos() {
 			try {
 				var form = new FormData();
-				form.append('userId', localStorage.getItem('userid'));
+				form.append('userId', cookie.load('userid'));
 
-				var headers = { Authorization: 'Bearer ' + localStorage.getItem('token') };
+				var headers = { Authorization: 'Bearer ' + cookie.load('token') };
 
 				var apiResponse = await axios.post('https://www.backend.joinping.co/ping/getConvosList', form, { headers: headers });
 				console.log(apiResponse);
