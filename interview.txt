@@ -81,11 +81,34 @@ Javascript - ********
 API calls
 
 9. which library you used for making apis calls - axios
-10. async and wait ********
-11. error handling -  try catch
-12. api methods - post, get, put, update and delete
-13. JWT tokens ********
+10. async and await ********
+Javascript will not wait for any function till it exutes. it move to next line automatically without waiting for it's execution.
+to make javascript to wait, we will use async and wait.
 
+async function callApi(){
+    var response = await axios.post(url, formData);
+    if(response.data.status =="success"){
+
+    }
+}
+
+11. error handling -  try catch
+    to actch errors and to display proper error messages, we use try catch blocks
+    async function callApi(){
+        try{
+            var response = await axios.post(url, formData);
+            if(response.data.status =="success"){
+
+            }
+        }catch(err){
+            setErrorMsg(err.message)
+        }
+    }
+
+12. api methods - post, get, put and delete
+    baesd on inpiuts from backend team
+13. JWT tokens ********
+    
 
 storage
 

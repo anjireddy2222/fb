@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 function Interview(){
 
     // declare array
@@ -56,6 +58,45 @@ function Interview(){
     names[2] = "pragna m"
     // in arrays, if we assing any array to another variable, chnages in any one varible will reflect in another variable automatically.
 
+    var [xnumbers, setXNumbers] = useState([1, 5, 7, 2, 10, 20, 13])
+    var [xemployees, setXEmployees] = useState([
+        {
+            name: "Anji",
+            id: 10,
+            city: "Hyd"
+        },
+        {
+            name: "Pragna",
+            id: 3,
+            city: "Hyd"
+        },
+        {
+            name: "Dedeepya",
+            id: 8,
+            city: "Hyd"
+        }
+    ])
+
+    var nums = [1, 2, 4, 1, 4, 2, 5, 7, 7]
+    var uniqNums = []
+    nums.map( item => {
+        if( uniqNums.includes(item) == false){
+            uniqNums.push(item)
+        }
+    })
+    console.log(uniqNums)
+
+
+    function sortNumbers(){
+        var num = [...xnumbers];
+        setXNumbers(num.sort( (number, prevNumber) => number - prevNumber ))    
+    }
+
+    function sortTable(){
+        var tempEmp = [...xemployees]
+        tempEmp.sort( (present, prev) => present.id - prev.id)
+        setXEmployees(tempEmp)
+    }
 
     return(
         <div className="container">
