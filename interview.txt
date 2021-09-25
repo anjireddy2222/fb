@@ -8,7 +8,7 @@ HTML basics -
 
 1. tell me some html tags
     html, head, meta, body, div, p, heading tags (h1 to h6), table, list tags (ul, ol).
-
+    
 2. difference between html tag and element
     <div>
      HI pragna
@@ -106,17 +106,93 @@ async function callApi(){
     }
 
 12. api methods - post, get, put and delete
-    baesd on inpiuts from backend team
-13. JWT tokens ********
-    
+    based on inpiuts from backend team
+13. JWT tokens ********  
+
+
+HTTP protocal:
+http protocal is a stateless protocal, it will just process a web request. it won't remeber any user state like loggedin, loggedout, new user. previously accessed.
+
+
 
 storage
 
-1. localstorage
-2. cookies
-3. redux - dispatch, action and events ********
+1. localstorage -- 75% chances
 
-1. Webpack and building application ********
+    3 types of storages - localstorage, cookies and sessions.
+    sessions are managed( stored) on server.
+
+    localstorage and cookies - stored on user browser.
+    to store data locally - localstorage.setItem('keyName', value)
+    to retrive data locally - localstorage.getItem('keyName', value)
+
+2. cookies
+    install and import cookie from 'react-cookies'
+    to store data in cookies - cookie.save('cookiename', value)
+    to retrive data from cookies - cookie.get('cookiename') 
+
+
+we use cookies to store small amount of data. all the cookies information will be sent to the server on every request automatically. userId, token.
+we use localstorage to store bulk data. example: wishlist, cart items, chat messages. userId, token.
+
+
+3. redux - dispatch, action and events ********
+    to send data to another components, we use props. we can directly share data to child componet with props. but, if we want to send data to another componet which
+    is a nested of another nested component, code will become complex and 1 minor mistake will take time to identitfy and fix.
+
+    function Home(){
+        retunr(
+            <div>
+                <Post />
+            </div>
+        )
+    }
+    function Post(){
+        retunr(
+            <div>
+                <Like />
+                <Comment />
+            </div>
+        )
+    }
+
+    1. store - store will be having main state object( json object ) and function for updating state object
+    2. event or action - particular action taking place on state object - like adding to wish list, removing from wishlist, updating userId, updating token after login
+    3. dispatch - dispatch will take that event to store.
+    store.js
+    var appData ={
+        wishList: []
+    }
+    function updateAppData(){
+
+    }
+    var store = createStore(updateAppData)
+    export default store;
+
+    /******end of store.js page*****/
+    function Home(){
+        var disptach = usedispatch()
+
+        function addToWishList(){
+            var event = { type: 'ADD_TO_WISHLIST', data: product }
+            dispatch(event)
+        }
+
+        retunr(
+            <div>
+                <button onclick={addToWishList()} >add to wishlist</button>
+            </div>
+        )
+    }
+
+    function Like(){
+        var wishListItems = useSelector( appdata => appdata.wishList)
+    }
+
+
+1. Webpack or babble and building application ********
+    react will not not get executed in the browser directly. to convert react code to normal javascript, html and css, we use webpack. 
+    to generate production build, execute "npm run build" command in the terminal. it will create build folder inside your project and upload those files to server.
 
 
 reactjs
@@ -152,6 +228,7 @@ components, we use usestate hook to manage data. if we update the state, compone
 same as 3rd answer
 
 5. life cycle methods
+
 class components:
 1. componentwillmount - this event will be called before displaying the web page in the browser
 2. componentdidmount - this event will be called after dispaying the web page in the browser. used for making api calls on page load.

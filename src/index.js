@@ -23,6 +23,7 @@ import InterviewTwo from './InterviewTwo';
 
 ReactDOM.render(
 	<Provider store={dataStorage}>
+
 		<React.StrictMode>
 			<BrowserRouter>
 				<Switch>
@@ -36,6 +37,7 @@ ReactDOM.render(
 				</Switch>
 			</BrowserRouter>
 		</React.StrictMode>
+		
 	</Provider>,
 	document.getElementById('root')
 );
