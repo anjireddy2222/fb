@@ -61,8 +61,10 @@ body{
     font-family: "lato"
 }
 
-4. media queries ******** (pending)
-we use css media quries to apply styles based on the screen size.
+4. media queries ********
+we use css media quries to apply styles based on the screen size. example - if you want to apply some style on mobile devices, we can apply using media 
+queries.
+
 
 
 Javascript - ********
@@ -107,7 +109,16 @@ async function callApi(){
 
 12. api methods - post, get, put and delete
     based on inpiuts from backend team
-13. JWT tokens ********  
+
+13. JWT tokens ******** (secured apis)
+
+ 1. we use jwt tokens after the login only.
+ 2. JWT token is a encrypted JSON object - it will have loggedin userid, token created time, expiry time and any other data based on our requirement.
+ 3. Backend will generate JWT token after the successful login of the user.
+ 4. Font end team will receive and store it in the localstorage on UI side.
+ 5. We need to send this token to all API calls after the login. 
+ 6. If anyone trying to alter the token in the localstorage, decryption will be failed in the server and then server will send unauthorised token as the api response.
+
 
 
 HTTP protocal:
@@ -365,7 +376,9 @@ synthetic events works same on any kind of browser.
 ======================
 Pending
 
-useMemo
+useMemo - 
+
+error boundries
 
 
 

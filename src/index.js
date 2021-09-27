@@ -19,6 +19,7 @@ import List from './components/classComponents/List';
 import Test from './Test';
 import Interview from './Interview';
 import InterviewTwo from './InterviewTwo';
+import InterviewThree from './InterviewThree';
 
 
 ReactDOM.render(
@@ -27,7 +28,7 @@ ReactDOM.render(
 		<React.StrictMode>
 			<BrowserRouter>
 				<Switch>
-					<Route exact path='/' component={InterviewTwo} />
+					<Route exact path='/' component={InterviewThree} />
 					<Route exact path='/shop' component={Shop} />
 					<Route exact path='/facebook' component={Home} />
 					<Route exact path='/swiggy' component={SwiggyHome} />
